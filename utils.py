@@ -110,14 +110,14 @@ def loadData(name='EO'):
         x_test = np.expand_dims(x_test,3)
         y_test = mat_contents['y_test']
         y_test = np.transpose(y_test)
-#         mat_contents = sio.loadmat('Ship-Dataset/SAR/SARVal.mat')
-#         temp = mat_contents['x_val']
-#         temp = np.squeeze(temp , axis = 1)
-#         temp = np.array(temp, dtype = 'float32')
-#         z_valid = 2.*(temp/255.)-1.
-#         z_valid = np.expand_dims(z_valid,3)
-#         yz_valid = mat_contents['y_val']
-#         yz_valid = np.transpose(yz_valid)
+        mat_contents = sio.loadmat('Ship-Dataset/SAR/SARVal.mat')
+        temp = mat_contents['x_val']
+        temp = np.squeeze(temp , axis = 1)
+        temp = np.array(temp, dtype = 'float32')
+        z_valid = 2.*(temp/255.)-1.
+        z_valid = np.expand_dims(z_valid,3)
+        yz_valid = mat_contents['y_val']
+        yz_valid = np.transpose(yz_valid)
     else:
         print("Invalid input")
         return 
