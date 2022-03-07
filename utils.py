@@ -2,7 +2,7 @@ import numpy as np
 import tensorflow.keras.utils
 from tensorflow.keras import backend as K
 import tensorflow as tf
-import scipy.io as sio
+# import scipy.io as sio
 
 
 def generateTheta(L,endim):
@@ -12,12 +12,12 @@ def generateTheta(L,endim):
     return theta_
 
 def oneDWassersteinV3(p,q):
-    # ~10 Times faster than V1
+    ~10 Times faster than V1
 
-    # W2=(tf.nn.top_k(tf.transpose(p),k=tf.shape(p)[0]).values-
-    #     tf.nn.top_k(tf.transpose(q),k=tf.shape(q)[0]).values)**2
+    W2=(tf.nn.top_k(tf.transpose(p),k=tf.shape(p)[0]).values-
+        tf.nn.top_k(tf.transpose(q),k=tf.shape(q)[0]).values)**2
 
-    # return K.mean(W2, axis=-1)
+    return K.mean(W2, axis=-1)
 
     psort=tf.sort(p,axis=0)
     qsort=tf.sort(q,axis=0)
